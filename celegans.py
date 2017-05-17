@@ -8,7 +8,7 @@ from random import randint
 
 #read files
 
-connect = pd.read_csv("./CElegansTP/data/Connectome.csv") #commentaire
+connect = pd.read_csv("./CElegansTP/data/Connectome.csv", ) #commentaire
 neuro = pd.read_csv("./CElegansTP/data/Neurons_to_Muscles.csv")
 senso = pd.read_csv("./CElegansTP/data/Sensory.csv")
 
@@ -58,10 +58,6 @@ for name in names:
 print ConnectomeDictionnary
 print TypeDictionnary
 
-rm = 1
-cm = 10
-urest = 0
-I = []
 
 ti = 0
 tmax = 35
