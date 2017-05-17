@@ -24,14 +24,24 @@ print senso
 ConnectomeDictionnary = {}
 TypeDictionnary = {}
 
+names = connect.Neuron.unique()
+sens = senso["Neuron"].tolist()
+musc = neuro["Origin"].tolist()
+
+
 for name in connect.Neuron.unique():
   ConnectomeDictionnary[name] = {}
-
-  if senso.loc[senso["Neuron"]==name].empty :
-    typ = "Unknown"
-  else :
-    typ = str(((senso.loc[senso["Neuron"]==name].as_matrix())[0])[0]).split('|')
-
+  typ = ""
+  b = True
+  print name
+  if name in sens:
+    typ += "sensor"
+    b = False
+  if name in musc:
+    typ += "motor"
+    b = False
+  if b is True:
+    typ += "interneuron"
 
   print typ
   TypeDictionnary[name] = typ
