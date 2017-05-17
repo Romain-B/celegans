@@ -8,9 +8,9 @@ import pandas as pd
 
 #read files
 
-connect = pd.read_csv("~/Desktop/EDO/EDO_python/CElegansTP/data/Connectome.csv")
-neuro = pd.read_csv("~/Desktop/EDO/EDO_python/CElegansTP/data/Neurons_to_Muscles.csv")
-senso = pd.read_csv("~/Desktop/EDO/EDO_python/CElegansTP/data/Sensory.csv")
+connect = pd.read_csv("./CElegansTP/data/Connectome.csv") #commentaire
+neuro = pd.read_csv("./CElegansTP/data/Neurons_to_Muscles.csv")
+senso = pd.read_csv("./CElegansTP/data/Sensory.csv")
 
 connect = connect.drop(connect.columns[[0]], axis=1)
 neuro = neuro.drop(neuro.columns[[0]], axis=1)
