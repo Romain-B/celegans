@@ -8,7 +8,7 @@ import pandas as pd
 
 #read files
 
-connect = pd.read_csv("./CElegansTP/data/Connectome.csv") #commentaire
+connect = pd.read_csv("./CElegansTP/data/Connectome.csv", ) #commentaire
 neuro = pd.read_csv("./CElegansTP/data/Neurons_to_Muscles.csv")
 senso = pd.read_csv("./CElegansTP/data/Sensory.csv")
 
@@ -53,7 +53,7 @@ for name in names:
     cons = a.iloc[[i]].as_matrix()[0]
     target = cons[1]
 
-    ConnectomeDictionnary[name][target] = cons[2] if cons[3] is "exc" else -1.0*cons[2]
+    ConnectomeDictionnary[name][target] = cons[2] if str(cons[3]) == "exc" else -1.0*cons[2]
 
 print ConnectomeDictionnary
 print TypeDictionnary
