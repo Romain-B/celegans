@@ -17,9 +17,9 @@ neuro = neuro.drop(neuro.columns[[0]], axis=1)
 senso = senso.drop(senso.columns[[0]], axis=1)
 
 
-print connect
-print neuro
-print senso
+# print connect
+# print neuro
+# print senso
 
 ConnectomeDictionnary = {}
 TypeDictionnary = {}
@@ -29,7 +29,7 @@ sens = senso["Neuron"].tolist()
 musc = neuro["Origin"].tolist()
 
 
-for name in connect.Neuron.unique():
+for name in names:
   ConnectomeDictionnary[name] = {}
   typ = ""
   b = True
@@ -43,7 +43,6 @@ for name in connect.Neuron.unique():
   if b is True:
     typ += "interneuron"
 
-  print typ
   TypeDictionnary[name] = typ
 
   a = connect.loc[connect["Neuron"] == name]
