@@ -50,4 +50,7 @@ print ConnectomeDictionnary
 print TypeDictionnary
 
 
+def derivve(rm,cm,urest,I,V):
+	deriv = (urest - V + rm*I) / (rm*cm)
+	return deriv
 
