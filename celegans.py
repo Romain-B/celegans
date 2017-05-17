@@ -4,7 +4,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-
+from random import randint
 
 #read files
 
@@ -53,13 +53,27 @@ for name in names:
     cons = a.iloc[[i]].as_matrix()[0]
     target = cons[1]
 
-    ConnectomeDictionnary[name][target] = cons[2] if cons[3] is "exc" else -1.0*cons[2]
+    ConnectomeDictionnary[name][target] = cons[2] if cons[3] == "exc" else -1.0*cons[2]
 
 print ConnectomeDictionnary
 print TypeDictionnary
 
+rm = 1
+cm = 10
+urest = 0
+I = []
 
-def derivve(rm,cm,urest,I,V):
-	deriv = (urest - V + rm*I) / (rm*cm)
+ti = 0
+tmax = 35
+h = 0.1
+
+xseq = np.arange(ti,tmax,h)
+
+for elem in range(len(xseq)):
+	I.append(randint(0,1))
+
+def derivve(V,step):
+	deriv = (urest - V + rm*I[step]) / (rm*cm)
 	return deriv
+
 
